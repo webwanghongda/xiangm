@@ -1,23 +1,47 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <router-view></router-view>
+    <tab-bar>
+      <tab-bar-item path="/Home">
+        <img slot="item-icon" src="./assets/img/tabbar/首页.svg" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/首页active.svg" alt="">
+        <div slot="item-text">首页</div>
+      </tab-bar-item>
+      <tab-bar-item path="/Category">
+        <img slot="item-icon" src="./assets/img/tabbar/分类.svg" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/分类active.svg" alt="">
+        <div slot="item-text">分类</div>
+      </tab-bar-item>
+      <tab-bar-item path="/Cart">
+        <img slot="item-icon" src="./assets/img/tabbar/购物车.svg" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/购物车active.svg" alt="">
+        <div slot="item-text">购物车</div>
+      </tab-bar-item>
+      <tab-bar-item path="/Profile">
+        <img slot="item-icon" src="./assets/img/tabbar/我的.svg" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/我的active.svg" alt="">
+        <div slot="item-text">我的</div>
+      </tab-bar-item>
+      
+    </tab-bar>
   </div>
 </template>
 
 <script>
+import TabBar from './components/tabbar/TabBar'
+import TabBarItem from './components/tabbar/TabBarItem'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    TabBar,
+    TabBarItem
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import "./assets/css/base.css";
+  
+
 </style>
