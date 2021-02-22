@@ -23,10 +23,13 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json','.css','.svg'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'components': resolve('src/components'),
+      'assets': resolve('src/assets'),
+      'wiews': resolve('src/wiews'),
     }
   },
   module: {

@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
 import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
@@ -14,8 +15,15 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  axios,
   components: { App },
   template: '<App/>'
+})
+
+axios({
+  url:'http://123.207.32.32:8000/home/multidata'
+}).then(res=>{
+  console.log(res);
 })
 
 // require('./assets/css/base.css')
